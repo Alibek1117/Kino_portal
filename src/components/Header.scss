@@ -32,6 +32,7 @@
     }
     
             ul{
+                
                 a{
                     color: #fff;
                     position: relative;
@@ -94,3 +95,32 @@ ul{
     }
 }
 
+
+.menu-bar{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 120px;
+    height: 160px;
+    background: #00000069;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        a::after{
+            display: none;
+                  
+                }
+                
+        li{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+}

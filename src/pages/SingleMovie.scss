@@ -37,22 +37,24 @@
 
     .blur-left{
         height: 100%;
+        // width: 40%;
         padding: 0px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
-         height: 400px;
-            width: 400px;
+        // height: 400px;
+        width: 400px;
         img{
             
             height: 100%;
             width: 100%;
             border-radius: 10px;
-                display: block;
+            display: block;
 
         }
     }
     .blur-right{
+        width: 60%;
         .right-title{
             font-size: 2.5rem;
             font-weight: 900;
