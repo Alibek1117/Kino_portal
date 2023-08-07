@@ -1,0 +1,34 @@
+.big-circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // .middle-circle{
+    //      width: 52px;
+    //      height: 52px;
+    //      border-radius: 50%;
+        //  background: conic-gradient(#d9ee1b 0.5turn, #3d3d3d 180deg);
+    //     //  background: #e28000;
+    //      display: flex;
+    //      align-items: center;
+    //      justify-content: center;
+         .small-circle{
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             background: #000;
+            //  background: transparent;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-weight: 700;
+             font-size: 1.2rem;
+             sup{
+                font-size: 8px;
+             }
+         }
+    }
+// }
