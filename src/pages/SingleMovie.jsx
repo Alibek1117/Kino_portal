@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserScore from "../components/UserScore";
-import YouTube from "react-youtube";
+// import YouTube from "react-youtube";
 
 const SingleMovie = () => {
   const { id } = useParams();
@@ -94,7 +94,7 @@ const SingleMovie = () => {
               </button>
               {youTube && (
                 <div className="youTube" onClick={() => setYouTube(false)}>
-                  <YouTube />
+                  {/* <YouTube /> */}
                 </div>
               )}
             </div>
