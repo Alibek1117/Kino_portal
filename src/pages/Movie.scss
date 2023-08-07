@@ -18,6 +18,7 @@
         box-shadow: 0 0 5px 3px #111111;
         height: 510px;
         margin-top: 10px;
+        text-align: center;
         img{
             width: 100%;
         }
@@ -30,6 +31,7 @@
             .rating{
                 position: absolute;
                 top: -30px;
+                left: 90px;
                 color: rgb(255, 255, 255);
             }
 
@@ -64,6 +66,8 @@
         box-shadow: 0 0 5px 3px #111111;
         height: 510px;
         margin-top: 10px;
+        text-align: center;
+        margin-bottom: 25px;
         img{
             width: 100%;
         }
@@ -76,6 +80,7 @@
             .rating{
                 position: absolute;
                 top: -30px;
+                left: 90px;
                 color: rgb(255, 255, 255);
             }
 

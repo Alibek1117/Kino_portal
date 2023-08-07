@@ -1,36 +1,31 @@
-import { useEffect, useState } from 'react';
-import './Header.scss'
-import { NavLink } from 'react-router-dom'
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import "./Header.scss";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const Header = () => {
-  const [search, setSearch] = useState([])
-  const [menu, setMenu] = useState(false)
-  useEffect(()=>{
-    axios
-      .get(`https://api.themoviedb.org/3/search/movie`, {
-        params: {
-          api_key: "c52aac538904a08747df5e8da7018b07",
-          // query: searchKey
-        },
-      })
-      .then((res) => res)
-      .then((data) => console.log(data));
+  const [search, setSearch] = useState([]);
+  const [menu, setMenu] = useState(false);
 
-  },[])
-  const menuBar =(e)=>{
-    // e.stopPropagation();
-    setMenu(true)
-    // console.log(e);
-  }
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   console.log(search);
+  const handleSubmit = (e) => {
+    // e.preventDefault()
+    if (search.length > 0) {
+      navigate(`/search/${search}`);
+    } else {
+      navigate("/");
+    }
+  };
   return (
-    <div className="header" onMouseDown={()=>setMenu(false)}>
+    <div className="header">
       <div className="container">
         <NavLink to="/">
           <h2 className="logo">Movie-App</h2>
         </NavLink>
-        <form className="header-form d-none d-md-block">
+        <form className="header-form d-none d-md-block" onSubmit={handleSubmit}>
           <input
             className="search-input"
             placeholder={` Search...`}
@@ -49,30 +44,36 @@ const Header = () => {
             <li>People</li>
           </NavLink>
         </ul>
-        <i className="fa-solid fa-bars d-sm-none" onClick={()=>setMenu(true)}></i>
-        {menu&&<div className="menu-bar">
-          <ul>
-            <NavLink to="/">
-              <li>
-                <i class="fa-solid fa-house"></i> <span>Home</span>
-              </li>
-            </NavLink>
-            <NavLink to="/movie">
-              <li>
-                <i class="fa-solid fa-film"></i>
-                <span>Movie</span>
-              </li>
-            </NavLink>
-            <NavLink to="/people">
-              <li>
-                <i class="fa-solid fa-users"></i><span>People</span>
-              </li>
-            </NavLink>
-          </ul>
-        </div>}
+        <i
+          className="fa-solid fa-bars d-sm-none"
+          onClick={() => setMenu(true)}
+        ></i>
+        {menu && (
+          <div className="menu-bar">
+            <ul>
+              <NavLink to="/">
+                <li onClick={() => setMenu(false)}>
+                  <i class="fa-solid fa-house"></i> <span>Home</span>
+                </li>
+              </NavLink>
+              <NavLink to="/movie">
+                <li onClick={() => setMenu(false)}>
+                  <i class="fa-solid fa-film"></i>
+                  <span>Movie</span>
+                </li>
+              </NavLink>
+              <NavLink to="/people">
+                <li onClick={() => setMenu(false)}>
+                  <i class="fa-solid fa-users"></i>
+                  <span>People</span>
+                </li>
+              </NavLink>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
-export default Header
+export default Header;

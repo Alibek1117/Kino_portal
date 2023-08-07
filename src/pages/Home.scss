@@ -10,7 +10,7 @@
     .home-blur{
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(45deg, rgba(24, 23, 23, 0.644), rgba(253, 143, 53, 0.404));
+        background-image: linear-gradient(to top, #1a1818, rgba(253, 143, 53, 0.486));
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -77,6 +77,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition-duration: 0.3s;
+    
         }
         .gradient,
         .day2{

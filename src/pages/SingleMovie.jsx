@@ -44,10 +44,11 @@ const SingleMovie = () => {
       <div className="single-card" style={singleCard}></div>
 
       <div className="blur-card">
-        <div className="container">
+        <div className="container d-flex flex-col flex-md-row">
           <div className="blur-left">
             <img
-              src={`https://www.themoviedb.org/t/p/w300_and_h450_face/${movies.poster_path}`}
+              //https://image.tmdb.org/t/p/original/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg
+              src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`}
               alt="imgs"
             />
           </div>

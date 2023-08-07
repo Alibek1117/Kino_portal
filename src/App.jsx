@@ -6,6 +6,7 @@ import SingleMovie from './pages/SingleMovie';
 import Movie from './pages/Movie';
 import People from './pages/People';
 import SinglePeople from './pages/SinglePeople';
+import SearchList from './pages/SearchList';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/people" element={<People />} />
           <Route path="/movie-single/:id" element={<SingleMovie />} />
           <Route path="/people-single/:id" element={<SinglePeople />} />
+          <Route path="/search/:id" element={<SearchList />} />
         </Routes>
       </BrowserRouter>
     </>

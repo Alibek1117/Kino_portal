@@ -5,13 +5,15 @@ import React, { useEffect, useState } from "react";
 import DayTrend from "../components/trending/DayTrend";
 import WeekTrend from "../components/trending/WeekTrend";
 import TvPop from "../components/trending/TvPop";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Home = () => {
   const [dayTrend, setDayTrend] = useState([])
   const [weekTrend, setWeekTrend] = useState([])
-  const [searchkey, setSearchkey] = useState('Avatar');
+  const [searchkey, setSearchkey] = useState('');
   const [tvPop, setTvPop] = useState([]);
-  // const [searchMovie, setSearchMovie] = useState('');
   const [trend, setTrend] = useState();
   const [defaultM, setDefaultM] = useState(true);
   const [trendStyle, setTrendStyle] = useState({
@@ -23,7 +25,9 @@ const Home = () => {
     week:true,
     tvPop:true
   });
-  // console.log(trend);
+  const navigate = useNavigate()
+
+
 
   useEffect(()=>{
     axios.get("https://api.themoviedb.org/3/trending/all/day", {
@@ -58,20 +62,9 @@ const Home = () => {
       .then((res) => res)
       .then((data) => setTvPop(data.data.results), setLoader({ tvPop: false }));
 
-    axios
-      .get(`https://api.themoviedb.org/3/search/movie?query=${searchkey}`, {
-        params: {
-          api_key: "c52aac538904a08747df5e8da7018b07",
-          // query: searchKey
-        },
-      })
-      .then((res) => res)
-      .then((data) => console.log(data));
-
+    
     
   },[])
-  console.log(searchkey);
-  // console.log(tvPop);
 
   const homeHero = {
     backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/sa9vB0xb3OMU6iSMkig8RBbdESq.jpg)`,
@@ -99,9 +92,15 @@ const Home = () => {
     console.log(trend);
   }
 
-  // const searchMovies =(e)=>{
-  //     e.preventDefault()
-  // }
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    if (searchkey.length>0) {
+      navigate(`/search/${searchkey}`)
+    }else{navigate(`/`);}
+    
+  }
+
+  console.log(searchkey);
 
   return (
     <div>
@@ -112,7 +111,7 @@ const Home = () => {
             <h2 className="home-subtitle">
               Millions of movies, TV shows and people to discover. Explore now.
             </h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
                 type="search"
                 placeholder="Search for a movie, tv show, person . . ."
