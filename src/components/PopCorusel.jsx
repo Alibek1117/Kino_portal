@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const PopCorusel = ({movies}) => {
     console.log(movies, 'saolmn');
 
+
+
     // const singleCard = {
     //   backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path})`,
     // }
@@ -18,7 +20,8 @@ const PopCorusel = ({movies}) => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src={`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${movies[3]?.backdrop_path}`}
+              className="carusel-img"
+              src={`https://image.tmdb.org/t/p/original${movies[8]?.backdrop_path}`}
               alt="img"
             />
           </div>
@@ -26,7 +29,8 @@ const PopCorusel = ({movies}) => {
             <div className="carousel-item" key={movie.id}>
               <Link to={`/movie-single/${movie.id}`}>
                 <img
-                  src={`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}`}
+                  className="carusel-img"
+                  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                   alt="img"
                 />
               </Link>

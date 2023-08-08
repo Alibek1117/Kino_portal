@@ -9,7 +9,7 @@ const WeekTrend = ({weekTrend}) => {
         <Link to={`/home/${movie.id}`} key={movie.id}>
           <div className="movie-card ">
             <img
-              src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt="imgs"
             />
             <div className="card-title ">

@@ -4,20 +4,21 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Header = () => {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState("");
   const [menu, setMenu] = useState(false);
 
   const navigate = useNavigate();
   const { id } = useParams();
 
-  console.log(search);
   const handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault();
     if (search.length > 0) {
       navigate(`/search/${search}`);
     } else {
       navigate("/");
     }
+    e.target.elements[0].value = "";
+    console.log(e.target.elements[0].value);
   };
   return (
     <div className="header">
@@ -25,6 +26,7 @@ const Header = () => {
         <NavLink to="/">
           <h2 className="logo">Movie-App</h2>
         </NavLink>
+
         <form className="header-form d-none d-md-block" onSubmit={handleSubmit}>
           <input
             className="search-input"

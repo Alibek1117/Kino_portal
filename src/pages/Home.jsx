@@ -6,6 +6,7 @@ import DayTrend from "../components/trending/DayTrend";
 import WeekTrend from "../components/trending/WeekTrend";
 import TvPop from "../components/trending/TvPop";
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/Loader";
 
 
 
@@ -37,8 +38,8 @@ const Home = () => {
     })
     .then(res=>res)
     .then(data=> 
-      setDayTrend(data.data.results),
-      setLoader({day:false})
+      {setDayTrend(data.data.results);
+      setLoader({day:false})}
     )
 
     axios
@@ -67,7 +68,7 @@ const Home = () => {
   },[])
 
   const homeHero = {
-    backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/sa9vB0xb3OMU6iSMkig8RBbdESq.jpg)`,
+    backgroundImage: `url(https://image.tmdb.org/t/p/original/sa9vB0xb3OMU6iSMkig8RBbdESq.jpg)`,
   };
 
 
@@ -137,7 +138,7 @@ const Home = () => {
             </div>
           </div>
           {loader?.day ? (
-            <h1>LOADING...</h1>
+            <Loader/>
           ) : (
             <div>
               {trend}
