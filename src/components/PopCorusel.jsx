@@ -21,7 +21,7 @@ const PopCorusel = ({movies}) => {
           <div className="carousel-item active">
             <img
               className="carusel-img"
-              src={`https://image.tmdb.org/t/p/original${movies[8]?.backdrop_path}`}
+              src={`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${movies[8]?.backdrop_path}`}
               alt="img"
             />
           </div>
@@ -30,7 +30,7 @@ const PopCorusel = ({movies}) => {
               <Link to={`/movie-single/${movie.id}`}>
                 <img
                   className="carusel-img"
-                  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                  src={`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}`}
                   alt="img"
                 />
               </Link>

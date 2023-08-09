@@ -56,15 +56,15 @@ const SingleMovie = () => {
           <div className="single-card" style={singleCard}></div>
 
           <div className="blur-card">
-            <div className="container d-flex flex-col flex-md-row">
-              <div className="blur-left">
+            <div className="container row">
+              <div className="blur-left col-12 col-md-4">
                 <img
                   //https://image.tmdb.org/t/p/original/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg
                   src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`}
                   alt="imgs"
                 />
               </div>
-              <div className="blur-right">
+              <div className="blur-right col-12 col-md-8 px-6">
                 <h2 className="right-title">
                   {movies.original_name
                     ? movies.original_name

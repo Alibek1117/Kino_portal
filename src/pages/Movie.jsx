@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import MovieCard from '../components/MovieCard'
 import PopCorusel from '../components/PopCorusel'
+import Loader from '../components/Loader'
 
 
 const Movie = () => {
@@ -16,12 +17,12 @@ const Movie = () => {
             },
           })
           .then((res) => res)
-          .then((data) => setMovies(data.data.results), setLoader(false))
+          .then((data) => {setMovies(data.data.results); setLoader(false)})
           .catch((err) => console.log(err.message));
 
         
     },[])
-   if (loader) {return <h1>LOADING...</h1>}
+   if (loader) {return <Loader/>}
    console.log(movies);
   return (
     <div className="container movie-full">

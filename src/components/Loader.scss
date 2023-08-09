@@ -22,20 +22,20 @@
 }
 
 .loader:after {
-  background: transparent;
+  background: #1a1818;
   border-radius: 50%;
-  box-shadow: 0em -2.60em transparent,
-    2.25em -4.02em transparent,
-    2.25em -1.25em transparent,
-    4.60em 0em transparent,
-    2.25em 1.25em transparent,
-    2.25em 4.02em transparent,
-    0em 2.60em transparent,
-    -2.25em 4.02em transparent,
-    -2.25em 1.25em transparent,
-    -4.60em 0em transparent,
-    -2.25em -1.25em transparent,
-    -2.25em -4.02em transparent;
+  box-shadow: 0em -2.60em #1a1818,
+    2.25em -4.02em #1a1818,
+    2.25em -1.25em #1a1818,
+    4.60em 0em #1a1818,
+    2.25em 1.25em #1a1818,
+    2.25em 4.02em #1a1818,
+    0em 2.60em #1a1818,
+    -2.25em 4.02em #1a1818,
+    -2.25em 1.25em #1a1818,
+    -4.60em 0em #1a1818,
+    -2.25em -1.25em #1a1818,
+    -2.25em -4.02em #1a1818;
   content: '';
   display: block;
   height: 2em;

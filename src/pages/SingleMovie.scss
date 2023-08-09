@@ -32,7 +32,7 @@
         display: flex;
         padding-top: 35px;
         align-items: center;
-        gap: 50px;
+        // gap: 10px;
     }
 
     .blur-left{
@@ -42,8 +42,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 450px;
-        width: 300px;
+        // height: 450px;
+        // width: 300px;
         img{
             
             height: 100%;
@@ -54,9 +54,9 @@
         }
     }
     .blur-right{
-        width: 60%;
+        // width: 100%;
         .right-title{
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 900;
         }
         .title-year{

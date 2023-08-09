@@ -14,8 +14,20 @@
         box-shadow: 0 0 5px 3px #111111;
         // height: 290px;
         margin-top: 10px;
+        transition: 0.3s;
+        margin-bottom: 20px;
         img{
             width: 100%;
+            transition: 0.5s;
+            border-radius: 10px;
+        }
+        &:hover{
+            transform: rotateX(10deg);
+            box-shadow: 0 5px 6px 4px #111111;
+            img{
+                transform: scale(0.9);
+            }
+            
         }
 
         .people-title{

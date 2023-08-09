@@ -50,8 +50,8 @@ const Home = () => {
       })
       .then((res) => res)
       .then(
-        (data) => setWeekTrend(data.data.results),
-        setLoader({ week: false }),
+        (data) => {setWeekTrend(data.data.results);
+        setLoader({ week: false })},
       );
 
     axios
@@ -61,7 +61,7 @@ const Home = () => {
         },
       })
       .then((res) => res)
-      .then((data) => setTvPop(data.data.results), setLoader({ tvPop: false }));
+      .then((data) => {setTvPop(data.data.results); setLoader({ tvPop: false })});
 
     
     
