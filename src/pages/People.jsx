@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./People.scss";
+import Loader from "../components/Loader";
 
 const People = () => {
   const [people, setPeople] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     axios
@@ -14,9 +16,12 @@ const People = () => {
         },
       })
       .then((res) => res)
-      .then((data) => setPeople(data.data.results));
+      .then((data) =>{ setPeople(data.data.results);setLoader(false)});
   }, []);
   console.log(people);
+  if (loader ===true) {
+    return <Loader/>
+  }
   return (
     <div className="container">
       <div className="people-cards row">

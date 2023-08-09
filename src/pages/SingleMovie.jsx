@@ -2,7 +2,7 @@ import "./SingleMovie.scss";
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import UserScore from "../components/UserScore";
 import Loader from "../components/Loader";
 // import YouTube from "react-youtube";
@@ -22,6 +22,7 @@ const SingleMovie = () => {
       })
       .then((res) => res)
       .then((data) => {
+        console.log(data);
         setMovies(data.data);
         data.status === 200 && data.request.readyState === 4
           ? setLoader(false)
@@ -120,6 +121,7 @@ const SingleMovie = () => {
               </div>
             </div>
           </div>
+          
         </>
       )}
     </div>

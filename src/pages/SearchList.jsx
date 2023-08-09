@@ -33,10 +33,12 @@ const SearchList = () => {
           className=" col-12 col-sm-6 col-md-4 col-lg-3"
         >
           <div className="movie-card ">
-            <img
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              alt="imgs"
-            />
+            <div className="img-card">
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt="imgs"
+              />
+            </div>
             <div className="card-title ">
               <h3 className="rating">
                 <UserScore>{movie.vote_average}</UserScore>
